@@ -1,0 +1,316 @@
+:root {
+    --primary-color: #AAA0A0;
+    --secondary-color: #474853;
+    --action-color: #7AB0B0;
+    --header-color: #C7C3C3;
+    --btn-color: #A38471;
+}
+
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Syncopate', sans-serif; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+}
+
+h2, h4 {
+    color: var(--header-color);
+}
+
+h1, h3 {
+    color: var(--action-color);
+}
+
+blockquote {
+    color: var(--primary-color);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 2rem;
+}
+
+.wrapper {
+    max-width: 1024px;
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "hero-header"
+    "main"
+    "footer";
+}
+
+/*---- Button styling ----*/
+.btn {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--btn-color);
+    border: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    padding: 0.3rem 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+.btn--action {
+    background-color: var(--action-color);
+}
+
+/*---- Card styling ----*/
+.large-card {
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}
+
+/*---- Hero-header styling ---*/
+.hero-header {
+    width: 100%;
+    height: 25vh;
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-position: center;
+    grid-area: hero-header;
+}
+.logo {
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+/*---- Nav-bar styling ----*/
+.nav-bar {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-bar__toggle {
+    position: absolute;
+    cursor: pointer;
+    left: 1rem;
+    top: 1rem;
+    z-index: 2;
+}
+
+.nav-bar__checkbox, .nav-bar__menu-list li {
+    display: none;
+}
+
+.nav-bar__menu-list {
+    background-color: var(--header-color); /*BYT!!*/
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav-bar__menu-list a {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif; /*Kan man flytta ut??*/
+    font-weight: 700; /*Kan man flytta ut??*/
+}
+
+#nav-bar__checkbox:checked ~ .nav-bar__menu-list{
+    position: absolute;
+    padding: 3rem;
+    z-index: 1;
+}
+
+#nav-bar__checkbox:checked ~ ul.nav-bar__menu-list li {
+    display: block;
+}
+
+/*---- Main styling ----*/
+
+.main {
+    grid-area: main;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/*---- Description styling ----*/
+.description {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    size: 12px;
+    line-height: 18px;
+    color: var(--primary-color);
+}
+
+.read-more {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    
+}
+
+.read-more a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*---- Your space resort styling ----*/
+
+.large-card--space-resort {
+    background-image: url("../images/home.jpeg");
+}
+
+.carousel {
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color); 
+    border-top: 1px solid var(--primary-color);
+    padding: 2rem;
+    
+}
+
+.carousel__facility {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-card {
+    width: 290px;
+    height: 160px;
+    background-size: cover;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}
+
+.small-card--rooms {
+    background-image: url("../images/08-night.jpg");
+}
+
+.small-card--restaurant {
+    background-image: url("../images/restaurant.jpeg");
+}
+
+.small-card--spa {
+    background-image: url("../images/Spa.webp");
+}
+
+/*---- Facilities styling ----*/
+.large-card--facilities {
+    background-image: url("../images/facilities.jpeg");
+}
+
+/*---- Footer styling ----*/
+.footer {
+    grid-area: footer;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating {
+    border-top: 1px solid var(--primary-color);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating h3 {
+    font-size: 1rem;
+}
+
+.rating h4 {
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+
+.footer__nav {
+    display: none;
+}
+
+.footer__nav__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-left: 0;
+}
+
+.footer__nav__list a {
+    text-decoration: none;
+    color: var(--header-color);
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 15px;
+    font-family: 'Syncopate';
+}
+
+
+
+
+/* @media only screen and (min-width: 560px) {
+    .nav-bar__toggle {
+        display: none;
+    }
+    .nav-bar__menu-list {
+        flex-direction: row;
+    }
+
+    .nav-bar__menu-list li {
+        display: block;
+    }
+
+} */
