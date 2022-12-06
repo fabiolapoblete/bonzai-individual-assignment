@@ -6,6 +6,9 @@
     --btn-color: #A38471;
 }
 
+html {
+    font-size: 12px; /*1 rem=12px*/
+}
 /* font-family: 'Josefin Sans', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Syncopate', sans-serif; */
@@ -15,14 +18,43 @@ font-family: 'Syncopate', sans-serif; */
     margin: 0;
 }
 
-body {
+/* body {
     width: 100vw;
     height: 100vh;
+} */
+
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--action-color);
+    font-size: 20px; /*40px desktop*/
+    margin-bottom: 2.5rem;
 }
 
-h1, h2, h3, h4 {
+h2 {
     font-family: 'Syncopate', sans-serif;
-    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 18px; /*36px desktop*/
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: justify;
+    font-size: 12px; /*24px desktop*/
+}
+
+h3, h4 {
+    font-family: 'Syncopate', sans-serif;
+    /* font-size: 1.1rem; */
     font-weight: 700;
     line-height: 2.5rem;
     text-transform: uppercase;
@@ -57,6 +89,7 @@ blockquote {
     "hero-header"
     "main"
     "footer";
+    margin: 0 auto;
 }
 
 /*---- Button styling ----*/
@@ -72,15 +105,16 @@ blockquote {
     color: var(--secondary-color);
     text-transform: uppercase;
     padding: 0.3rem 0.9rem;
+    display: flex;
+    align-items: center;
 }
 .btn--action {
     background-color: var(--action-color);
 }
 
 /*---- Hero-header styling ---*/
-.hero-header {
+.hero {
     height: 30vh;
-    background-image: url("../images/hero.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -92,9 +126,27 @@ blockquote {
     grid-area: hero-header;
 }
 
+.hero--home {
+    background-image: url("../images/hero.png");
+}
+
+.hero--facilities {
+    background-image: url("../images/facilities.jpeg");
+}
+
+.heading--facilities {
+    color: var(--primary-color);
+}
+
+.hero__logo {
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+}
+
 .logo {
-    margin-left: auto;
-    margin-bottom: auto;
+    width: 100px;
+    height: 80px;
 }
 
 /*---- Nav-bar styling ----*/
@@ -156,9 +208,9 @@ blockquote {
 .description {
     color: var(--primary-color);
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 1.3rem;
+    line-height: 20.8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,6 +260,11 @@ blockquote {
 
 .card--large--facilities {
     background-image: url("../images/facilities.jpeg");
+}
+
+.card--large--rooms {
+    background-image: url("../images/08-night.jpg");
+    width: 80%;
 }
 
 .card--small--rooms {
@@ -276,7 +333,6 @@ blockquote {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* gap: 0.3rem; */
     padding-left: 0;
 }
 
@@ -288,6 +344,102 @@ blockquote {
     line-height: 15px;
     font-family: 'Syncopate';
 }
+
+/*Facilities*/
+
+.facilities {
+    display: flex;
+    padding: 2rem 1rem;
+    /* padding: 4rem; */
+    gap: 2rem;
+    /* gap: 8rem; */
+    border-bottom: 1px solid var(--primary-color); 
+}
+
+.facilities__desc {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.facilities__desc button {
+    align-self: flex-end;
+}
+
+.facilities__img {
+    width: 300px;
+    height: 200px;
+    /* width: 525px;
+    height: 267px; */
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.rooms-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rooms-text {
+    width: 80%;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.recommended h3 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid var(--primary-color); 
+    line-height: 0.1em;
+    margin: 30px 0 30px; 
+}
+
+.recommended h3 span {
+    background-color: #474853;
+    padding:10px; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    padding: 2rem;
+}
+input {
+    background-color: #A38471;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border: none;
+    width: 100%;
+
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+
+
 
 @media only screen and (min-width: 650px) {
     .main {
@@ -305,10 +457,13 @@ blockquote {
 }
 
 @media only screen and (min-width: 900px) {
-    
+    html {
+        font-size: 24px;
+    }
     .nav-bar {
         width: 100%;
-        position: static;
+        position: unset;
+        background: rgba(71, 72, 83, 0.3);
     }
     .nav-bar__toggle {
         display: none;
@@ -317,8 +472,8 @@ blockquote {
         flex-direction: row;
         justify-content: space-between;
         background-color: transparent;
-        margin-top: 3.5rem;
-                
+        padding-inline-start: 0;     
+        padding: 0 1rem;  
     }
 
     .nav-bar__menu-list li {
@@ -327,16 +482,26 @@ blockquote {
     }
 
     .logo {
-        margin-right: auto;
-        margin-bottom: 0;
         width: 157px;
         height: 80px;
     }
 
-    .hero-header {
-        padding: 0 1rem;
-        height: 50vh;
+    .hero__logo {
+        background-color: rgba(71, 72, 83, 0.3);
+        width: 100%;
+        text-align: center;
+        position: unset;
+    }
+
+    .hero {
+        padding: 0;
+        height: 40vh;
         justify-content: flex-start;
+    }
+
+    .heading {
+        margin-top: auto;
+        margin-bottom: 2rem;
     }
 
     .description {
@@ -362,6 +527,8 @@ blockquote {
     .footer__nav {
         display: block;
     }
+
+    
 
 
 }
